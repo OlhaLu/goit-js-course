@@ -19,13 +19,13 @@
 
 'use strict'
 
-const country = 'Ямайка'
+const COUNTRY = 'Австралия'
 
 let deliveryPrise
 
 let message
 
-switch (country) {
+switch (COUNTRY) {
   case 'Китай':
     deliveryPrise = 100
     break
@@ -55,11 +55,11 @@ switch (country) {
     break
 
   default:
-    message = 'Такой страны ' + country + ' нет в списке.'
+    message = `Такой страны ${COUNTRY} нет в списке.`
 }
 
-if (deliveryPrise !== undefined) {
-  message = `Доставка в страну ${country} будет стоить ${deliveryPrise} кредитов`
+if (deliveryPrise) {
+  message = `Доставка в страну ${COUNTRY} будет стоить ${deliveryPrise} кредитов`
 }
 
 console.log(message)
