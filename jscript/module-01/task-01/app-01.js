@@ -13,18 +13,18 @@
 'use strict'
 
 const ADMIN_PASSWORD = 'm4ng0h4ckz'
-const inform_cancel = 'Отменено пользователем!'
-const inform_right = 'Добро пожаловать!'
-const wrong_password = 'Доступ запрещен, неверный пароль!'
+const CANCEL_MESSAGE = 'Отменено пользователем!'
+const CORECT_PASSWORD_MESSAGE = 'Добро пожаловать!'
+const WRONG_PASSWORD_MESSAGE = 'Доступ запрещен, неверный пароль!'
 
 let message = prompt('Please enter your password')
 
 if (message === null) {
-  alert(inform_cancel)
+  alert(CANCEL_MESSAGE)
 } else if (message !== ADMIN_PASSWORD) {
-  alert(wrong_password)
+  alert(WRONG_PASSWORD_MESSAGE)
 } else {
-  alert(inform_right)
+  alert(CORECT_PASSWORD_MESSAGE)
 }
 
 console.log(message)
