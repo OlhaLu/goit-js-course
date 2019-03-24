@@ -17,49 +17,41 @@
 
 // const country = 'Индия';
 
-'use strict'
+'use strict';
 
-const COUNTRY = 'Австралия'
+const COUNTRY = 'Китай';
 
-let deliveryPrise
+let deliveryPrise;
 
-let message
+let message;
 
 switch (COUNTRY) {
   case 'Китай':
-    deliveryPrise = 100
-    break
+    deliveryPrise = 100;
+    break;
 
   case 'Южная Америка':
-    deliveryPrise = 250
-    break
+    deliveryPrise = 250;
+    break;
 
   case 'Австралия':
-    deliveryPrise = 170
-    break
+    deliveryPrise = 170;
+    break;
 
   case 'Индия':
-    deliveryPrise = 80
-    break
+    deliveryPrise = 80;
+    break;
 
   case 'Ямайка':
-    deliveryPrise = 120
-    break
-
-  case 'Парагвай':
-    message = 'В вашей стране доставка не доступна'
-    break
-
-  case 'Нидерланды':
-    message = 'В вашей стране доставка не доступна'
-    break
+    deliveryPrise = 120;
+    break;
 
   default:
-    message = `Такой страны ${COUNTRY} нет в списке.`
+    message = 'В вашей стране доставка не доступна';
 }
 
 if (deliveryPrise) {
-  message = `Доставка в страну ${COUNTRY} будет стоить ${deliveryPrise} кредитов`
+  message = `Доставка в страну ${COUNTRY} будет стоить ${deliveryPrise} кредитов`;
 }
 
-console.log(message)
+console.log(message);
