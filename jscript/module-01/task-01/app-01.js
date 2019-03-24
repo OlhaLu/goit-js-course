@@ -10,21 +10,19 @@
 // const ADMIN_PASSWORD = 'm4ng0h4ckz';
 // let message;
 
-'use strict'
+'use strict';
 
-const ADMIN_PASSWORD = 'm4ng0h4ckz'
-const CANCEL_MESSAGE = 'Отменено пользователем!'
-const CORECT_PASSWORD_MESSAGE = 'Добро пожаловать!'
-const WRONG_PASSWORD_MESSAGE = 'Доступ запрещен, неверный пароль!'
+const ADMIN_PASSWORD = 'm4ng0h4ckz';
+const CANCEL_MESSAGE = 'Отменено пользователем!';
+const CORECT_PASSWORD_MESSAGE = 'Добро пожаловать!';
+const WRONG_PASSWORD_MESSAGE = 'Доступ запрещен, неверный пароль!';
 
-let message = prompt('Please enter your password')
+let message = prompt('Please enter your password');
 
 if (message === null) {
-  alert(CANCEL_MESSAGE)
+  alert(CANCEL_MESSAGE);
 } else if (message !== ADMIN_PASSWORD) {
-  alert(WRONG_PASSWORD_MESSAGE)
+  alert(WRONG_PASSWORD_MESSAGE);
 } else {
-  alert(CORECT_PASSWORD_MESSAGE)
+  alert(CORECT_PASSWORD_MESSAGE);
 }
-
-console.log(message)
