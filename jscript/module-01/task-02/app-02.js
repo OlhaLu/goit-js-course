@@ -14,17 +14,13 @@
 
 'use strict'
 
-const credits = 23580
-const pricePerDroid = 3000
-const quantity = 3
+let credits = 23580
+let pricePerDroid = 3000
+let quantity = 25
 
 let totalPrice = pricePerDroid * quantity
 
-let message =
-  'Недостаточно средств на счету, так как остаток на вашем счету: ' +
-  credits +
-  ', ниже чем сумма покупки: ' +
-  totalPrice
+let message = `Недостаточно средств, так как остаток на вашем счету: ${credits}, ниже чем сумма покупки: ${totalPrice}.`
 
 if (totalPrice > credits) {
   alert('Недостаточно средств на счету!')
