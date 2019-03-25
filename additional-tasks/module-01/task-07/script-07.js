@@ -8,6 +8,11 @@
   PS: попробуй использовать тернарный оператор
 */
 
-const value = Number.parseInt(Math.random() * 100);
+let value = Number.parseInt(Math.random() * 100);
+
+let evenNumber = 'even';
+let oddNumber = 'odd';
+
+let type = value%2 === 0 ? evenNumber : oddNumber;
 
 console.log(`${value} is ${type}`);

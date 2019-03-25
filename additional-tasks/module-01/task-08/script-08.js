@@ -16,3 +16,37 @@
     4 - "Каталог отелей ****"
     5 - "Каталог лучших отелей"
 */
+
+
+let hotelNumber = prompt('Выберите свой отель, указав число от 1 до 5');
+let message;
+
+switch (hotelNumber) {
+  case '1':
+  message = 'Каталог хостелов';
+  break;
+
+  case '2':
+  message = 'Каталог бюджетных отелей';
+  break;
+
+  case '3':
+  message = 'Каталог отелей ***';
+  break;
+
+  case '4':
+  message = 'Каталог отелей ****';
+  break;
+
+  case '5':
+  message = 'Каталог лучших отелей';
+  break;
+
+  case 'null':
+  message = 'Очень жаль, приходите еще!';
+
+  default:
+  message = 'Неверный ввод, возможные варианты 1-5!';
+}
+
+alert(message);
