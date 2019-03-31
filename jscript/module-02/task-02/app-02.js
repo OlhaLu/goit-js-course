@@ -23,27 +23,25 @@
 const passwords = ['qwerty', '111qwe', '123123', 'r4nd0mp4zzw0rd'];
 let attemptsLeft = 3;
 let userLog;
-let checkinPasswords;
 
-while (attemptsLeft > 0) {
+while (attemptsLeft) {
   userLog = prompt('Введите пароль для авторизации');
-  checkinPasswords = passwords.includes(userLog);
-  console.log(checkinPasswords);
 
-  if (checkinPasswords) {
-    alert('Добро пожаловать!');
-    break;
-    
-  } if (userLog === null) {
+  if (userLog === null) {
     alert('Авторизация отклонена');
     break;
+  }
 
-  } if (!checkinPasswords) {
-    attemptsLeft -= 1;
-    alert(`Неверный пароль, у вас осталось ${attemptsLeft} попыток`);
+  if (passwords.includes(userLog)) {
+    alert('Добро пожаловать!');
+    break;
+  }
 
-  } if (attemptsLeft === 0) {
+  attemptsLeft -= 1;
+  alert(`Неверный пароль, у вас осталось ${attemptsLeft} попыток`);
+
+  if (attemptsLeft === 0) {
     alert('Аккаунт заблокирован, закончились попытки!');
     break;
   }
-  }
+}
