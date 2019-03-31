@@ -47,4 +47,8 @@ for (let i = 0; i < numbers.length; i += 1) {
   console.log(total);
 }
 
-alert(`Общая сумма чисел равна ${total}`);
+if (numbers.length > 0) {
+  alert(`Общая сумма чисел равна ${total}`);
+} else {
+  alert('Отменено пользователем!');
+}
