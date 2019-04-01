@@ -15,7 +15,7 @@ let words = message.split(' ');
 console.log(words);
 
 // Выведи в консоли длину массива words
-console.log(words.length); // 8
+console.log(`Длинна массива ${words.length}`); // 8
 
 // Используя цикл вычисли сколько будет стоить гравировка и запиши результат в переменную price
 // for (i = 0; i < ; i += 1) {
