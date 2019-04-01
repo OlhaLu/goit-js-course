@@ -22,5 +22,6 @@ console.log(words.length); // 8
 // }
 for (let i = 0; i < words.length; i += 1) {
   price += wordsPrice;
-  console.log(`Стоимость ${price} кредитов - количество слов ${i + 1}`); // 80
 }
+
+console.log(`Стоимость гравировки ${price}`); // 80
