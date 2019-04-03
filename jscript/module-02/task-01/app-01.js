@@ -4,7 +4,7 @@
 // Ввод сохраняется в переменную input и добавляется в массив чисел numbers.
 
 // Операция ввода числа пользователем и сохранение в массив продолжается до тех пор,
-// пока пользователь не нажмет Cancel в prompt. Используй бесконечный цикл с прерыванием.
+// пока пользователь не нажмет Cancel в prompt. !!!! Используй бесконечный цикл с прерыванием. !!!
 
 // После того как пользователь прекратил ввод нажав Cancel,
 // если массив не пустой, необходимо посчитать сумму всех элементов массива и записать ее в переменную total.
@@ -22,33 +22,21 @@ let input;
 let numbers = [];
 let total = 0;
 
-while (true) {
+do {
   input = prompt('Введите число');
-
-  if (input === null) {
-    break;
-  }
-
   let convertedNumber = Number(input);
-
-  console.log(`Значение после конвертации: ${convertedNumber}`);
 
   if (Number.isNaN(convertedNumber)) {
     alert('Было введено не число, попробуйте еще раз');
-  } else {
+  } else if ((convertedNumber !== 0)) {
     numbers.push(convertedNumber);
   }
 
-  console.log(`Массив: ${numbers}`);
-}
+} while (input !== null);
 
-for (let i = 0; i < numbers.length; i += 1) {
-  total += numbers[i];
-  console.log(total);
-}
-
-if (numbers.length > 0) {
+if (numbers.length) {
+  for (let i = 0; i < numbers.length; i += 1) {
+    total += numbers[i];
+    }
   alert(`Общая сумма чисел равна ${total}`);
-} else {
-  alert('Отменено пользователем!');
-}
+}  
