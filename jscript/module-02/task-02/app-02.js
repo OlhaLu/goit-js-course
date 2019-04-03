@@ -40,7 +40,7 @@ while (attemptsLeft) {
   attemptsLeft -= 1;
   alert(`Неверный пароль, у вас осталось ${attemptsLeft} попыток`);
 
-  if (attemptsLeft === 0) {
+  if (!attemptsLeft) {
     alert('Аккаунт заблокирован, закончились попытки!');
     break;
   }
