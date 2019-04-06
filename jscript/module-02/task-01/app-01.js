@@ -24,19 +24,17 @@ let total = 0;
 
 do {
   input = prompt('Введите число');
-  let convertedNumber = Number(input);
 
-  if (Number.isNaN(convertedNumber)) {
+  if (Number.isNaN(+input) || input === '') {
     alert('Было введено не число, попробуйте еще раз');
-  } else if ((convertedNumber !== 0)) {
-    numbers.push(convertedNumber);
+  } else if (input !== null) {
+    numbers.push(+input);
   }
-
 } while (input !== null);
 
 if (numbers.length) {
-  for (let i = 0; i < numbers.length; i += 1) {
-    total += numbers[i];
-    }
+  for (let number of numbers) {
+    total += number;
+  }
   alert(`Общая сумма чисел равна ${total}`);
-}  
+}
