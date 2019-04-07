@@ -33,37 +33,25 @@
 
 let logins = ['Mango', 'robotGoogles', 'Poly', 'Aj4x1sBozz', 'qwerty123'];
 
-const isLoginValid = function(login) {
-  let isLoginLongerThenFour = login.length >= 4;
-  let isLoginLessThenSixteen = login.length <= 16;
-
-  return isLoginLongerThenFour && isLoginLessThenSixteen;
+const isLoginValid = login => {
+  return login.length >= 4 && login.length <= 16;
 };
 
-const isLoginUnique = function(allLogins, login) {
-  let isUniqueLogin = true;
-
-  for (let loginElement of allLogins) {
-    if (loginElement === login) {
-      isUniqueLogin = false;
-      break;
-    }
-  }
-  return isUniqueLogin;
+const isLoginUnique = (allLogins, login) => {
+  return !allLogins.includes(login);
 };
 
-const addLogin = function(allLogins, login) {
-  let isloginValidResult = isLoginValid(login);
-  let isloginUniqueResult = isLoginUnique(allLogins, login);
-
-  if (!isloginValidResult) {
+const addLogin = (allLogins, login) => {
+  if (!isLoginValid(login)) {
     alert('Ошибка! Логин должен быть от 4 до 16 символов');
-  } else if (!isloginUniqueResult) {
-    alert('Такой логин уже используется!');
-  } else {
-    allLogins.push(login);
-    alert('Логин успешно добавлен!');
+    return;
   }
+  if (!isLoginUnique(allLogins, login)) {
+    alert('Такой логин уже используется!');
+    return;
+  }
+  allLogins.push(login);
+  alert('Логин успешно добавлен!');
 };
 
 // Вызовы функции для проверки
