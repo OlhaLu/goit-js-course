@@ -37,13 +37,11 @@ const notepad = {
      * Принимает: идентификатор заметки
      * Возвращает: заметку с совпавшим полем id или undefined если ничего не найдено
      */
-    let tmp;
     for (let note of this.notes) {
       if (note.id === id) {
-        tmp = note;
+        return note;
       }
     }
-    return tmp;
   },
 
   saveNote(note) {
@@ -64,12 +62,11 @@ const notepad = {
      * Принимает: идентификатор заметки
      * Возвращает: ничего
      */
-
     let deleteId = this.findNoteById(id);
-    for (let i = 0; i < this.notes.length; i += 1) {
+    for (let i = 0 ; i < this.notes.length - 1; i += 1) {
       deleteId = this.notes[i];
-      if (this.notes.indexOf(deleteId)) {
-        return this.notes.splice(i, 1);
+     if(this.notes.indexOf(deleteId)) {
+          this.notes.splice(i, 1);
       }
     }
   },
@@ -84,8 +81,11 @@ const notepad = {
      * Возвращает: обновленную заметку
      */
     let updateNote = this.findNoteById(id);
-    updateNote.updatedContent = updatedContent;
-  },
+    for (const cont in updatedContent) {
+      updateNote[cont] = updatedContent[cont];
+    }
+    return updateNote;
+    },
 
   updateNotePriority(id, priority) {
     /*
@@ -96,6 +96,7 @@ const notepad = {
      */
     let updateNote = this.findNoteById(id);
     updateNote.priority = priority;
+    return updateNote;
   },
 
   filterNotesByQuery(query) {
