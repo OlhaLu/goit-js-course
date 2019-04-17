@@ -63,12 +63,8 @@ const notepad = {
      * Возвращает: ничего
      */
     let deleteId = this.findNoteById(id);
-    for (let i = 0 ; i < this.notes.length - 1; i += 1) {
-      deleteId = this.notes[i];
-     if(this.notes.indexOf(deleteId)) {
-          this.notes.splice(i, 1);
-      }
-    }
+    let deleteIndex = this.notes.indexOf(deleteId);
+    this.notes.splice(deleteIndex, 1);
   },
 
   updateNoteContent(id, updatedContent) {
@@ -81,9 +77,7 @@ const notepad = {
      * Возвращает: обновленную заметку
      */
     let updateNote = this.findNoteById(id);
-    for (const cont in updatedContent) {
-      updateNote[cont] = updatedContent[cont];
-    }
+    Object.assign(updateNote, updatedContent);
     return updateNote;
     },
 
