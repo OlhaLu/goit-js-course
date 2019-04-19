@@ -17,7 +17,7 @@ const Priority = {
 };
 // Напиши код для работы методов данного объекта.
 
-('use strics');
+'use strics';
 
 const notepad = {
   notes: [],
@@ -62,9 +62,10 @@ const notepad = {
      * Принимает: идентификатор заметки
      * Возвращает: ничего
      */
-    let deleteId = this.findNoteById(id);
-    let deleteIndex = this.notes.indexOf(deleteId);
-    this.notes.splice(deleteIndex, 1);
+    // const deleteId = this.findNoteById(id);
+    // const deleteIndex = this.notes.indexOf(deleteId);
+    // this.notes.splice(deleteIndex, 1);
+    this.notes.splice((this.notes.indexOf(this.findNoteById(id))), 1);
   },
 
   updateNoteContent(id, updatedContent) {
@@ -76,7 +77,7 @@ const notepad = {
      * Принимает: идентификатор заметки и объект, полями которого надо обновить заметку
      * Возвращает: обновленную заметку
      */
-    let updateNote = this.findNoteById(id);
+    const updateNote = this.findNoteById(id);
     Object.assign(updateNote, updatedContent);
     return updateNote;
     },
@@ -88,7 +89,7 @@ const notepad = {
      * Принимает: идентификатор заметки и ее новый приоритет
      * Возвращает: обновленную заметку
      */
-    let updateNote = this.findNoteById(id);
+    const updateNote = this.findNoteById(id);
     updateNote.priority = priority;
     return updateNote;
   },
