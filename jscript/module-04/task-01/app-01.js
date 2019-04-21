@@ -17,7 +17,7 @@ const Priority = {
 };
 // Напиши код для работы методов данного объекта.
 
-'use strics';
+('use strics');
 
 const notepad = {
   notes: [],
@@ -65,7 +65,7 @@ const notepad = {
     // const deleteId = this.findNoteById(id);
     // const deleteIndex = this.notes.indexOf(deleteId);
     // this.notes.splice(deleteIndex, 1);
-    this.notes.splice((this.notes.indexOf(this.findNoteById(id))), 1);
+    this.notes.splice(this.notes.indexOf(this.findNoteById(id)), 1);
   },
 
   updateNoteContent(id, updatedContent) {
@@ -80,7 +80,7 @@ const notepad = {
     const updateNote = this.findNoteById(id);
     Object.assign(updateNote, updatedContent);
     return updateNote;
-    },
+  },
 
   updateNotePriority(id, priority) {
     /*
