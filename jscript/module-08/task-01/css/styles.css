@@ -1,0 +1,16 @@
+.section {
+  border: 1px solid gray;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.mainTitle {
+  border: 3px solid rgb(109, 109, 156);
+  text-align: center;
+}
+
+.button {
+  background: burlywood;
+  font-size: 14px;
+  text-align: center;
+}
