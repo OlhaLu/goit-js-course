@@ -61,20 +61,16 @@ newQuizMapper.renderQuestionsToPage();
 // обработка данных после отправки ответов
 const submitedForm = document.querySelector('.js-submit-form');
 submitedForm.addEventListener('submit', submitEvent);
-// const button = document.querySelector('.button');
-// button.disabled = true;
 
 function renderResultMessage(message) {
   const messText = `<p>${message}</p>`;
-
-  document.querySelector('form').insertAdjacentHTML('afterEnd', messText);
+  document.querySelector('form').insertAdjacentHTML('beforeend', messText);
 }
 
 function submitEvent(event) {
   event.preventDefault();
 
   const formData = new FormData(event.currentTarget);
-
   let questions = quizData.questions;
   let correctAnswersCounter = 0;
 
@@ -86,10 +82,10 @@ function submitEvent(event) {
 
   let percent = Math.floor((correctAnswersCounter / questions.length) * 100);
   if (percent >= 80) {
-    renderResultMessage(`Вы прошли тест и набрали ${percent} %. Поздравляем!`);
+    renderResultMessage(`УРА! Поздравляем! <br>Вы прошли тест на базовый уровень JavaScript. Ваш результат ${percent} %`);
   } else {
     renderResultMessage(
-      `Не достаточно правильных ответов для прохождения теста, вы набрали ${percent} %. Попробуйте еще`,
+      `Пробуйте еще, НЕ достаточно правильных ответов для прохождения теста, <br>Ваш результат ${percent} %.`,
     );
   }
-}
+};
