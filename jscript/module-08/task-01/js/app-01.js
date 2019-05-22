@@ -13,11 +13,11 @@ class QuizMapper {
     this.renderQuestionsToPage = function() {
       let fullRenderedArray = [];
 
-      for (let i = 0; i < questions.length; i++) {
+      questions.map((value, idx) => {
         fullRenderedArray.push(
-          this.createSectionAndSetData(questions[i], i + 1),
+          this.createSectionAndSetData(questions[idx], idx + 1),
         );
-      }
+      });
 
       const renderedQuestions = fullRenderedArray.join('');
       document
@@ -36,20 +36,18 @@ class QuizMapper {
 
     this.createLiAndSetData = function(choices, mainQuestionCounter) {
       let anwsersList = [];
-
-      for (let i = 0; i < choices.length; i++) {
+      choices.map((value, idx) => {
         const liElement = `
         <li>
             <label>
               <input type="radio" name="${mainQuestionCounter -
-                1}" value="${i}" />
-              ${choices[i]}
+                1}" value="${idx}" />
+              ${choices[idx]}
             </label>
-        </li>`;
-
+        </li>
+        `;
         anwsersList.push(liElement);
-      }
-
+      });
       return anwsersList.join('');
     };
   }
@@ -82,10 +80,12 @@ function submitEvent(event) {
 
   let percent = Math.floor((correctAnswersCounter / questions.length) * 100);
   if (percent >= 80) {
-    renderResultMessage(`УРА! Поздравляем! <br>Вы прошли тест на базовый уровень JavaScript. Ваш результат ${percent} %`);
+    renderResultMessage(
+      `УРА! Поздравляем! <br>Вы прошли тест на базовый уровень JavaScript. Ваш результат ${percent} %`,
+    );
   } else {
     renderResultMessage(
       `Пробуйте еще, НЕ достаточно правильных ответов для прохождения теста, <br>Ваш результат ${percent} %.`,
     );
   }
-};
+}
