@@ -54,10 +54,10 @@ function openModal(event) {
   const imgSource = event.target.dataset.source;
 
   const overlay = document.querySelector('.overlay');
-  overlay.classList.add('is-visible');
   const openModImg = overlay.querySelector('img');
   openModImg.setAttribute('src', imgSource);
   openModImg.setAttribute('alt', imgAlt);
+  overlay.classList.add('is-visible');
   window.addEventListener('keydown', handleEscPress);
 }
 
