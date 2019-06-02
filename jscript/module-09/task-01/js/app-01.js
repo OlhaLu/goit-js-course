@@ -64,6 +64,8 @@ function openModal(event) {
 // функция закрытия модального окна
 function closeModal(event) {
   const overlay = document.querySelector('.overlay');
+  const openModImg = overlay.querySelector('img');
+  openModImg.setAttribute('src', '');
   overlay.classList.remove('is-visible');
   window.removeEventListener('keydown', handleEscPress);
 }
